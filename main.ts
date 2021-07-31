@@ -1,8 +1,10 @@
 function checkTimeout () {
-    if (control.millis() >= startTime + runMaxSeconds * 1000) {
-        runProgram = false
-        basic.showIcon(IconNames.Yes)
-        serial.writeLine("@END@")
+    if (runMaxSeconds != 0) {
+        if (control.millis() >= startTime + runMaxSeconds * 1000) {
+            runProgram = false
+            basic.showIcon(IconNames.Yes)
+            serial.writeLine("@END@")
+        }
     }
 }
 serial.onDataReceived(serial.delimiters(Delimiters.NewLine), function () {
