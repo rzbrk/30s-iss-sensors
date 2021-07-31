@@ -4,7 +4,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "SCD30": "github:calliope-mini/pxt-scd30#4758ef2cb9f3b006076b64879c659c694bb9ab0a"
+        "SCD30": "github:calliope-mini/pxt-scd30#4758ef2cb9f3b006076b64879c659c694bb9ab0a",
+        "SI1145": "github:calliope-edu/pxt-sunlightsensor-si1145#09ad70e5f35cd74cf04d2cc4413bc7accedbaebc"
     },
     "files": [
         "main.blocks",

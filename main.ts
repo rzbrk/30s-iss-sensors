@@ -29,7 +29,7 @@ let ledY = 0
 let testAccelerometer = true
 let testMagnetometer = false
 let testSCD30 = true
-let testSI1145 = false
+let testSI1145 = true
 let testTCS34725 = false
 basic.showIcon(IconNames.Asleep)
 basic.forever(function () {
@@ -60,6 +60,9 @@ basic.forever(function () {
         }
         if (testSI1145 == true) {
             serial.writeLine("  Testing SI1145 . . .")
+            serial.writeLine("    IR intensity: " + SI1145.readInfraRed())
+            serial.writeLine("    Light intensity: " + SI1145.readLight())
+            serial.writeLine("    UV index: " + SI1145.readUltraVioletIndex())
         }
         if (testTCS34725 == true) {
             serial.writeLine("  Testing TCS34725 . . .")
