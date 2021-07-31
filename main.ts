@@ -21,6 +21,8 @@ let runProgram = false
 let runMaxSeconds = 0
 // runMaxSeconds is the maximum time in seconds the program is allowed to run.
 runMaxSeconds = 30
+// Period to update measurements in ms. Should be higher than ~ 200 ms
+let updatePeriod = 1000
 runProgram = false
 let counter = 0
 let ledCounter = 0
@@ -71,7 +73,7 @@ basic.forever(function () {
             serial.writeLine("    Blue: " + TCS3414.readBlue())
             serial.writeLine("    White: " + TCS3414.readClear())
         }
-        while (control.millis() - tick < 1000) {
+        while (control.millis() - tick < updatePeriod) {
         	
         }
         ledCounter = counter % 25
