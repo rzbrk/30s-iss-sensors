@@ -23,6 +23,9 @@ let runMaxSeconds = 0
 runMaxSeconds = 30
 runProgram = false
 let counter = 0
+let ledCounter = 0
+let ledX = 0
+let ledY = 0
 let testAccelerometer = true
 let testMagnetometer = false
 let testSCD30 = true
@@ -64,7 +67,11 @@ basic.forever(function () {
         while (control.millis() - tick < 1000) {
         	
         }
+        ledCounter = counter % 25
+        ledX = ledCounter % 5
+        ledY = (ledCounter - ledX) / 5
         counter = counter + 1
+        led.toggle(ledX, ledY)
         serial.writeLine("")
         checkTimeout()
     }
