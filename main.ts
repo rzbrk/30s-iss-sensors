@@ -30,7 +30,7 @@ let testAccelerometer = true
 let testMagnetometer = false
 let testSCD30 = true
 let testSI1145 = true
-let testTCS34725 = false
+let testTCS34725 = true
 basic.showIcon(IconNames.Asleep)
 basic.forever(function () {
     if (runProgram) {
@@ -66,6 +66,10 @@ basic.forever(function () {
         }
         if (testTCS34725 == true) {
             serial.writeLine("  Testing TCS34725 . . .")
+            serial.writeLine("    Red: " + TCS3414.readRed())
+            serial.writeLine("    Green: " + TCS3414.readGreen())
+            serial.writeLine("    Blue: " + TCS3414.readBlue())
+            serial.writeLine("    White: " + TCS3414.readClear())
         }
         while (control.millis() - tick < 1000) {
         	

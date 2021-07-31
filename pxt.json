@@ -5,7 +5,8 @@
         "core": "*",
         "radio": "*",
         "SCD30": "github:calliope-mini/pxt-scd30#4758ef2cb9f3b006076b64879c659c694bb9ab0a",
-        "SI1145": "github:calliope-edu/pxt-sunlightsensor-si1145#09ad70e5f35cd74cf04d2cc4413bc7accedbaebc"
+        "SI1145": "github:calliope-edu/pxt-sunlightsensor-si1145#09ad70e5f35cd74cf04d2cc4413bc7accedbaebc",
+        "TCS3414": "github:calliope-edu/pxt-tcs3414#55ca981d913d84b6811e1df3cb0f0304f86cd72a"
     },
     "files": [
         "main.blocks",
