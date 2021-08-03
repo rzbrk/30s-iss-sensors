@@ -35,6 +35,7 @@ let testMagnetometer = false
 let testSCD30 = true
 let testSI1145 = true
 let testTCS34725 = true
+let testButtons = true
 basic.showIcon(IconNames.Asleep)
 basic.forever(function () {
     if (runProgram) {
@@ -74,6 +75,19 @@ basic.forever(function () {
             serial.writeLine("    Green: " + TCS3414.readGreen())
             serial.writeLine("    Blue: " + TCS3414.readBlue())
             serial.writeLine("    White: " + TCS3414.readClear())
+            if (testButtons == true) {
+                serial.writeLine("  Testing Buttons . . .")
+                if (input.buttonIsPressed(Button.A)) {
+                    serial.writeLine("    Button A pressed")
+                } else {
+                    serial.writeLine("    Button A not pressed")
+                }
+                if (input.buttonIsPressed(Button.B)) {
+                    serial.writeLine("    Button B pressed")
+                } else {
+                    serial.writeLine("    Button B not pressed")
+                }
+            }
         }
         while (control.millis() - tick < updatePeriod) {
         	
